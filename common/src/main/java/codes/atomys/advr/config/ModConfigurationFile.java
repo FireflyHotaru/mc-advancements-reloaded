@@ -100,7 +100,7 @@ public final class ModConfigurationFile {
     Configuration.backgroundStyle = Configuration.BackgroundStyle
         .valueOf(appearance.getOrElse("background_style", "TRANSPARENT").toUpperCase());
     Configuration.criteriasTranslationMode = Configuration.TranslationMode
-        .valueOf(appearance.getOrElse("criterias_translation_mode", "ONLY_COMPATIBLE").toUpperCase());
+        .valueOf(appearance.getOrElse("criterias_translation_mode", "NONE").toUpperCase());
 
     Configuration.headerHeight = advancedCustomization.getOrElse("header_height", 48);
     Configuration.footerHeight = advancedCustomization.getOrElse("footer_height", 32);

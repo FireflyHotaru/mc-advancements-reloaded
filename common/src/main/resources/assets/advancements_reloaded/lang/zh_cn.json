@@ -28,6 +28,5 @@
   "text.config.advancements_reloaded.enum.background_style.black": "全黑",
   "text.config.advancements_reloaded.enum.background_style.achievement": "进度显示",
   "text.config.advancements_reloaded.enum.criterias_translation_mode.none": "按原样显示",
-  "text.config.advancements_reloaded.enum.criterias_translation_mode.only_compatible": "仅与模组兼容",
   "text.config.advancements_reloaded.enum.criterias_translation_mode.try_to_translate": "尽可能翻译"
 }

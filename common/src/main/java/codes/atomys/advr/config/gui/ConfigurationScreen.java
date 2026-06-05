@@ -165,6 +165,7 @@ public final class ConfigurationScreen {
             .setTooltip(
                 Component.translatable("text.config.advancements_reloaded.option.background_style.tooltip"))
             .setSaveConsumer(newValue -> Configuration.backgroundStyle = newValue)
+            .setEnumNameProvider(style -> Component.translatable("text.config.advancements_reloaded.enum.background_style." + style.name().toLowerCase()))
             .build());
 
     appearance.addEntry(
@@ -172,10 +173,11 @@ public final class ConfigurationScreen {
             .startEnumSelector(
                 Component.translatable("text.config.advancements_reloaded.option.criterias_translation_mode"),
                 Configuration.TranslationMode.class, Configuration.criteriasTranslationMode)
-            .setDefaultValue(Configuration.TranslationMode.ONLY_COMPATIBLE)
+            .setDefaultValue(Configuration.TranslationMode.NONE)
             .setTooltip(
                 Component.translatable("text.config.advancements_reloaded.option.criterias_translation_mode.tooltip"))
             .setSaveConsumer(newValue -> Configuration.criteriasTranslationMode = newValue)
+            .setEnumNameProvider(mode -> Component.translatable("text.config.advancements_reloaded.enum.criterias_translation_mode." + mode.name().toLowerCase()))
             .build());
   }
 
