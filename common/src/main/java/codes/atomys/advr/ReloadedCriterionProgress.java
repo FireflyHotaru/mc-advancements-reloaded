@@ -77,18 +77,17 @@ public class ReloadedCriterionProgress {
     final String criteria = this.criterion.getPath();
     // Try to translate the name by finding the item in the namespace and the
     // default namespace (if not the same as the namespace).
-    final List<String> namespaces = Lists.newArrayList(criterionNamespace);
-    final String[] keyTypes = { "biome", "block", "color", "container", "effect", "enchantment", "entity", "instrument",
-        "item", "jukebox_song", "painting", "stat" };
+    final List<String> namespaces = Lists.newArrayList(criterionNamespace, "minecraft");
+    final String[] keyTypes = { "item", "block", "entity", "biome", "color", "effect", "enchantment", "painting",
+        "jukebox_song", "instrument" };
 
     for (final String namespace : namespaces) {
       for (final String keyType : keyTypes) {
         // Special case for paintings since they have a different translation key
         final String translationKey = keyType + "." + namespace + "." + criteria
-            + (keyType.equals("painting") ? ".title" : "");
+            + ("painting".equals(keyType) ? ".title" : "");
         final Component translation = Component.translatable(translationKey);
         if (!translation.getString().equals(translationKey)) {
-          translation.getStyle().withItalic(true).applyTo(translation.getStyle());
           return translation;
         }
       }
